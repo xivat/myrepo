@@ -6,7 +6,6 @@ resource "aws_db_instance" "default" {
   instance_class       = "db.t2.micro"
   db_name              = "mydb"
   username             = "foo"
-//  password             = "mypassword445"
   password             = "${file("../rds_pass.txt")}"
   parameter_group_name = "default.mysql5.7"
   skip_final_snapshot = "true"
